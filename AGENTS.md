@@ -1,7 +1,23 @@
 # AGENTS.md — PMA Implementation Bible
 
-> **Version:** 5.0.0 · **Updated:** March 2026
+> **Version:** 5.1.0 · **Updated:** March 2026
 > This file is the single source of truth for all agents. Read it fully before every task.
+
+---
+
+## ⚠️ Important: Next.js 16 uses proxy.ts
+
+In **Next.js 16**, the middleware file has been renamed from `middleware.ts` to `proxy.ts`.
+
+| Next.js 15                     | Next.js 16                         |
+| ------------------------------ | ---------------------------------- |
+| `middleware.ts`                | `proxy.ts`                         |
+| `export function middleware()` | `export default clerkMiddleware()` |
+| Edge Runtime (default)         | Node.js Runtime (default)          |
+
+**Location:** The proxy file must be inside the `app/` directory: `app/proxy.ts`
+
+**Do NOT use `middleware.ts`** — it's deprecated in Next.js 16 and will show a warning.
 
 ---
 
@@ -104,26 +120,31 @@ _(... keep existing content ...)_
 
 ## 7. Open Issues & Milestone Tracking
 
-| Milestone | Status   | Notes                                       |
-| --------- | -------- | ------------------------------------------- |
-| M00-M05   | 🚧 To Do | Foundation, Auth, Onboarding, Company, Unit |
-| M06       | 🚧 To Do | Subscription & Billing                      |
-| M07       | 🚧 To Do | Team & Invitations                          |
-| M08       | 🚧 To Do | Client CRM                                  |
-| M09       | 🚧 To Do | Project Management                          |
-| M10       | 🚧 To Do | **Gantt (Kibo UI)**                         |
-| M11       | 🚧 To Do | Production Monitoring                       |
-| M12       | 🚧 To Do | **Kanban (Kibo UI)**                        |
-| M13       | 🚧 To Do | Task Comments & @Mentions                   |
-| M14       | 🚧 To Do | Time Tracking                               |
-| M15       | 🚧 To Do | Notifications System                        |
-| M16       | 🚧 To Do | Document Management                         |
-| M17       | 🚧 To Do | Activity Logs                               |
-| M18       | 🚧 To Do | User Workspace (USER)                       |
-| M19       | 🚧 To Do | Unit Dashboard (ADMIN)                      |
-| M20       | 🚧 To Do | Public Landing Page                         |
-| M21       | 🚧 To Do | Polish & Quality                            |
-| M22       | 🚧 To Do | Caching & Performance                       |
+| Milestone | Status   | Notes                           |
+| --------- | -------- | ------------------------------- |
+| M00       | ✅ Done  | Foundation & Dependencies       |
+| M01       | ✅ Done  | Prisma Schema & Database        |
+| M02       | ✅ Done  | Clerk Authentication            |
+| M03       | ✅ Done  | Root Layout & Global Components |
+| M04       | 🚧 To Do | Onboarding Wizard               |
+| M05       | 🚧 To Do | Company Management              |
+| M06       | 🚧 To Do | Subscription & Billing          |
+| M07       | 🚧 To Do | Team & Invitations              |
+| M08       | 🚧 To Do | Client CRM                      |
+| M09       | 🚧 To Do | Project Management              |
+| M10       | 🚧 To Do | **Gantt (Kibo UI)**             |
+| M11       | 🚧 To Do | Production Monitoring           |
+| M12       | 🚧 To Do | **Kanban (Kibo UI)**            |
+| M13       | 🚧 To Do | Task Comments & @Mentions       |
+| M14       | 🚧 To Do | Time Tracking                   |
+| M15       | 🚧 To Do | Notifications System            |
+| M16       | 🚧 To Do | Document Management             |
+| M17       | 🚧 To Do | Activity Logs                   |
+| M18       | 🚧 To Do | User Workspace (USER)           |
+| M19       | 🚧 To Do | Unit Dashboard (ADMIN)          |
+| M20       | 🚧 To Do | Public Landing Page             |
+| M21       | 🚧 To Do | Polish & Quality                |
+| M22       | 🚧 To Do | Caching & Performance           |
 
 ---
 

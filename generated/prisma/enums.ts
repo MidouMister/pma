@@ -9,7 +9,74 @@
 * 🟢 You can import this file directly.
 */
 
+export const Role = {
+  OWNER: 'OWNER',
+  ADMIN: 'ADMIN',
+  USER: 'USER'
+} as const
+
+export type Role = (typeof Role)[keyof typeof Role]
 
 
-// This file is empty because there are no enums in the schema.
-export {}
+export const SubscriptionStatus = {
+  TRIAL: 'TRIAL',
+  ACTIVE: 'ACTIVE',
+  GRACE: 'GRACE',
+  READONLY: 'READONLY',
+  SUSPENDED: 'SUSPENDED'
+} as const
+
+export type SubscriptionStatus = (typeof SubscriptionStatus)[keyof typeof SubscriptionStatus]
+
+
+export const ProjectStatus = {
+  New: 'New',
+  InProgress: 'InProgress',
+  Pause: 'Pause',
+  Complete: 'Complete'
+} as const
+
+export type ProjectStatus = (typeof ProjectStatus)[keyof typeof ProjectStatus]
+
+
+export const PhaseStatus = {
+  TODO: 'TODO',
+  IN_PROGRESS: 'IN_PROGRESS',
+  COMPLETE: 'COMPLETE'
+} as const
+
+export type PhaseStatus = (typeof PhaseStatus)[keyof typeof PhaseStatus]
+
+
+export const SubPhaseStatus = {
+  TODO: 'TODO',
+  COMPLETED: 'COMPLETED'
+} as const
+
+export type SubPhaseStatus = (typeof SubPhaseStatus)[keyof typeof SubPhaseStatus]
+
+
+export const InvitationStatus = {
+  PENDING: 'PENDING',
+  ACCEPTED: 'ACCEPTED',
+  REJECTED: 'REJECTED',
+  EXPIRED: 'EXPIRED'
+} as const
+
+export type InvitationStatus = (typeof InvitationStatus)[keyof typeof InvitationStatus]
+
+
+export const NotificationType = {
+  INVITATION: 'INVITATION',
+  PROJECT: 'PROJECT',
+  TASK: 'TASK',
+  TEAM: 'TEAM',
+  PHASE: 'PHASE',
+  CLIENT: 'CLIENT',
+  PRODUCTION: 'PRODUCTION',
+  LANE: 'LANE',
+  TAG: 'TAG',
+  GENERAL: 'GENERAL'
+} as const
+
+export type NotificationType = (typeof NotificationType)[keyof typeof NotificationType]
