@@ -1,4 +1,4 @@
-import { DM_Sans, Geist_Mono, Oxanium } from "next/font/google"
+import { Geist_Mono, Oxanium } from "next/font/google"
 import { Toaster } from "sonner"
 import { ClerkProvider } from "@clerk/nextjs"
 
@@ -7,8 +7,6 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { cn } from "@/lib/utils"
 import { Provider as JotaiProvider } from "jotai"
-
-const oxanium = Oxanium({subsets:['latin'],variable:'--font-sans'})
 
 const oxanium = Oxanium({
   subsets: ["latin"],
@@ -29,12 +27,15 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <html lang="fr" suppressHydrationWarning className={cn("font-sans", oxanium.variable)}>
+      <html
+        lang="fr"
+        suppressHydrationWarning
+        className={cn("font-sans", oxanium.variable)}
+      >
         <body
           className={cn(
             "antialiased",
             fontMono.variable,
-            oxanium.variable,
             oxanium.variable,
             "font-sans"
           )}

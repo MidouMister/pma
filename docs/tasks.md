@@ -132,7 +132,7 @@ M04 (Onboarding) ──► M05 (Company) ──► M06 (Billing) ──► M07 (
 ### Root Layout
 
 - [ ] Create `app/layout.tsx`:
-  - `lang="fr"`, DM Sans font (Google Fonts via `next/font`)
+  - `lang="fr"`, Oxanium font (Google Fonts via `next/font`)
   - `JotaiProvider` wrapper
   - `ThemeProvider` (next-themes, attribute="class")
   - `Toaster` (sonner)
